@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Your Workouts</h2>
+<ul>
+    {% for workout in workouts %}
+    <li>{{ workout.exercise }} - {{ workout.sets }} sets x {{ workout.reps }} reps {% if workout.weight %} @ {{ workout.weight }} lbs{% endif %}</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('main.add_workout') }}">Add Workout</a>
+{% endblock %}
